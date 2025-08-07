@@ -1,7 +1,3 @@
-"""
-FastAPI application setup and configuration.
-"""
-
 import os
 from contextlib import asynccontextmanager
 from datetime import datetime
@@ -21,9 +17,7 @@ logger = get_logger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """
-    Application lifespan events.
-    """
+    
     # Startup
     logger.info("Starting Math Microservice")
 

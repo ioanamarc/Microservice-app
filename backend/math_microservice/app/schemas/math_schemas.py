@@ -1,7 +1,3 @@
-"""
-Pydantic schemas for request/response validation and serialization.
-"""
-
 from datetime import datetime
 from typing import Optional, Union, Any
 from pydantic import BaseModel, Field, validator

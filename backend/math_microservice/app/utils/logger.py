@@ -1,7 +1,3 @@
-"""
-Logging configuration for the math microservice.
-"""
-
 import os
 import sys
 import logging
@@ -11,9 +7,7 @@ from structlog.stdlib import LoggerFactory
 
 
 def configure_logging() -> None:
-    """
-    Configure structured logging for the application.
-    """
+
     # Set log level from environment
     log_level = os.getenv("LOG_LEVEL", "INFO").upper()
 

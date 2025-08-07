@@ -1,7 +1,3 @@
-"""
-SQLAlchemy models for persisting API requests and responses.
-"""
-
 from datetime import datetime
 from sqlalchemy import Column, Integer, String, Float, DateTime, Text, Boolean
 from sqlalchemy.sql import func
@@ -10,9 +6,7 @@ from ..db.database import Base
 
 
 class MathRequest(Base):
-    """
-    Model to store mathematical operation requests and their results.
-    """
+
     __tablename__ = "math_requests"
 
     id = Column(Integer, primary_key=True, index=True)
@@ -31,9 +25,7 @@ class MathRequest(Base):
 
 
 class CacheEntry(Base):
-    """
-    Model to store cached computation results.
-    """
+
     __tablename__ = "cache_entries"
 
     id = Column(Integer, primary_key=True, index=True)

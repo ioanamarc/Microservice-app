@@ -1,7 +1,3 @@
-"""
-Business logic for mathematical operations with caching and extensibility.
-"""
-
 import hashlib
 import json
 import time
@@ -17,10 +13,6 @@ from ..utils.logger import LoggerMixin
 
 
 class MathOperationBase(ABC, LoggerMixin):
-    """
-    Abstract base class for mathematical operations.
-    Provides extensibility for adding new operations.
-    """
 
     @abstractmethod
     async def execute(self, **kwargs) -> Union[int, float]:
@@ -91,7 +83,7 @@ class FactorialOperation(MathOperationBase):
     """Factorial operation implementation."""
 
     async def execute(self, n: int) -> int:
-        """Calculate n! (factorial)."""
+
         if n == 0 or n == 1:
             return 1
 
@@ -109,30 +101,18 @@ class FactorialOperation(MathOperationBase):
 
 
 class CacheManager(LoggerMixin):
-    """
-    Cache manager for storing and retrieving computed results.
-    """
+
 
     def __init__(self, default_ttl_hours: int = 24):
         self.default_ttl_hours = default_ttl_hours
 
     def _generate_cache_key(self, operation: str, parameters: dict) -> str:
-        """Generate a unique cache key for the operation and parameters."""
+
         key_data = f"{operation}:{json.dumps(parameters, sort_keys=True)}"
         return hashlib.sha256(key_data.encode()).hexdigest()
 
     async def get(self, db: AsyncSession, operation: str, parameters: dict) -> Optional[Any]:
-        """
-        Retrieve cached result if available and not expired.
 
-        Args:
-            db: Database session
-            operation: Operation name
-            parameters: Operation parameters
-
-        Returns:
-            Cached result or None if not found/expired
-        """
         cache_key = self._generate_cache_key(operation, parameters)
 
         try:
@@ -170,16 +150,7 @@ class CacheManager(LoggerMixin):
         result: Any,
         ttl_hours: Optional[int] = None
     ) -> None:
-        """
-        Store result in cache.
 
-        Args:
-            db: Database session
-            operation: Operation name
-            parameters: Operation parameters
-            result: Result to cache
-            ttl_hours: Time to live in hours (uses default if None)
-        """
         cache_key = self._generate_cache_key(operation, parameters)
         ttl = ttl_hours or self.default_ttl_hours
         expires_at = datetime.utcnow() + timedelta(hours=ttl)
@@ -222,10 +193,7 @@ class CacheManager(LoggerMixin):
 
 
 class MathService(LoggerMixin):
-    """
-    Main service class for mathematical operations.
-    Coordinates operations, caching, and persistence.
-    """
+
 
     def __init__(self):
         self.operations: Dict[str, MathOperationBase] = {
@@ -236,12 +204,7 @@ class MathService(LoggerMixin):
         self.cache_manager = CacheManager()
 
     def register_operation(self, operation: MathOperationBase) -> None:
-        """
-        Register a new mathematical operation.
 
-        Args:
-            operation: Operation instance to register
-        """
         name = operation.get_operation_name()
         self.operations[name] = operation
         self.logger.info(f"Registered new operation: {name}")
@@ -253,21 +216,7 @@ class MathService(LoggerMixin):
         parameters: dict,
         use_cache: bool = True
     ) -> tuple[Any, float, bool]:
-        """
-        Execute a mathematical operation with caching.
 
-        Args:
-            db: Database session
-            operation_name: Name of the operation to execute
-            parameters: Operation parameters
-            use_cache: Whether to use caching
-
-        Returns:
-            Tuple of (result, execution_time_ms, was_cached)
-
-        Raises:
-            ValueError: If operation is not supported or parameters are invalid
-        """
         if operation_name not in self.operations:
             raise ValueError(f"Unsupported operation: {operation_name}")
 
@@ -305,5 +254,5 @@ class MathService(LoggerMixin):
             raise ValueError(f"Operation failed: {str(e)}")
 
     def get_available_operations(self) -> list[str]:
-        """Get list of available operations."""
+
         return list(self.operations.keys())

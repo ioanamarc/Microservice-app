@@ -1,7 +1,3 @@
-"""
-Database configuration and setup for the math microservice.
-"""
-
 import os
 from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
@@ -33,12 +29,7 @@ metadata = MetaData()
 
 
 async def get_db() -> AsyncGenerator[AsyncSession, None]:
-    """
-    Dependency to get database session.
 
-    Yields:
-        AsyncSession: Database session
-    """
     async with AsyncSessionLocal() as session:
         try:
             yield session
@@ -50,15 +41,11 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
 
 
 async def init_db() -> None:
-    """
-    Initialize database by creating all tables.
-    """
+
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
 
 async def close_db() -> None:
-    """
-    Close database connections.
-    """
+
     await engine.dispose()
