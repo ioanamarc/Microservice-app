@@ -109,7 +109,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex" style={{
-      background: 'linear-gradient(135deg, #ff6ec7 0%, #bf5ae0 25%, #a855f7 50%, #7c3aed 75%, #6366f1 100%)'
+      background: 'linear-gradient(135deg, #ededf1ff 100%)'
     }}>
       {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
