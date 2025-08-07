@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/math_microservice/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/__init__.py" />
+              <option name="updatedContent" value="# math_microservice app package&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/controllers/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/controllers/__init__.py" />
+              <option name="updatedContent" value="# controllers package for math_microservice&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/controllers/math_controller.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/controllers/math_controller.py" />
+              <option name="updatedContent" value="# Controller for math operations&#10;from ..services.math_service import perform_operation&#10;&#10;def handle_math_request(operation, operands):&#10;    try:&#10;        result = perform_operation(operation, operands)&#10;        return {&quot;result&quot;: result}&#10;    except Exception as e:&#10;        return {&quot;error&quot;: str(e)}&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/db/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/db/__init__.py" />
+              <option name="updatedContent" value="# db package for math_microservice&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/db/database.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/db/database.py" />
+              <option name="updatedContent" value="# Database connection placeholder&#10;&#10;def get_db_connection():&#10;    # Implement actual DB connection logic here&#10;    return None&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/main.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/main.py" />
+              <option name="updatedContent" value="# Main application entry for the math microservice&#10;&#10;def start_app():&#10;    print(&quot;Math microservice started.&quot;)&#10;    # Here you would initialize FastAPI or Flask app&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/models/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/models/__init__.py" />
+              <option name="updatedContent" value="# models package for math_microservice&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/models/request_model.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/models/request_model.py" />
+              <option name="updatedContent" value="# Request model for math operations&#10;class MathRequest:&#10;    def __init__(self, operation: str, operands: list):&#10;        self.operation = operation&#10;        self.operands = operands&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/schemas/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/schemas/__init__.py" />
+              <option name="updatedContent" value="# schemas package for math_microservice&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/schemas/math_schemas.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/schemas/math_schemas.py" />
+              <option name="updatedContent" value="# Schemas for math operations&#10;class MathResponse:&#10;    def __init__(self, result: float):&#10;        self.result = result&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/services/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/services/__init__.py" />
+              <option name="updatedContent" value="# services package for math_microservice&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/services/math_service.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/services/math_service.py" />
+              <option name="updatedContent" value="# Service for performing math operations&#10;def perform_operation(operation, operands):&#10;    if operation == 'add':&#10;        return sum(operands)&#10;    elif operation == 'subtract':&#10;        return operands[0] - operands[1]&#10;    # Add more operations as needed&#10;    else:&#10;        raise ValueError('Unsupported operation')&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/utils/__init__.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/utils/__init__.py" />
+              <option name="updatedContent" value="# utils package for math_microservice&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/math_microservice/app/utils/logger.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/math_microservice/app/utils/logger.py" />
+              <option name="updatedContent" value="# Simple logger utility&#10;import logging&#10;&#10;def get_logger(name: str = &quot;math_microservice&quot;):&#10;    logger = logging.getLogger(name)&#10;    if not logger.handlers:&#10;        handler = logging.StreamHandler()&#10;        formatter = logging.Formatter('[%(asctime)s] %(levelname)s in %(module)s: %(message)s')&#10;        handler.setFormatter(formatter)&#10;        logger.addHandler(handler)&#10;    logger.setLevel(logging.INFO)&#10;    return logger&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/requirements.txt">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/requirements.txt" />
+              <option name="updatedContent" value="fastapi&#10;uvicorn&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/run.py">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/run.py" />
+              <option name="updatedContent" value="# Entry point for running the microservice&#10;if __name__ == &quot;__main__&quot;:&#10;    from app.main import start_app&#10;    start_app()&#10;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
