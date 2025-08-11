@@ -1,30 +1,23 @@
 # Math Microservice
+
 ## Core Features
 
-### Backend (FastAPI Microservice)
-- **Mathematical Operations API**: Three core mathematical operations with input validation
+- **Mathematical Operations API**: 
   - Power calculations (base^exponent)
   - Fibonacci sequence generation (0-1000)
   - Factorial calculations (0-170)
-- **REST API Architecture**: Clean, RESTful endpoints following HTTP standards
+- **REST API Architecture**: RESTful endpoints following HTTP standards
 - **Database Persistence**: Complete request/response logging with SQLAlchemy async ORM
-- **Smart Caching System**: Automatic result caching with configurable TTL and hit tracking
+- **Caching System**: Automatic result caching with configurable TTL and hit tracking
 - **Request History**: Comprehensive audit trail with filtering and pagination
 - **Service Statistics**: Real-time performance metrics and usage analytics  
 - **Health Monitoring**: Built-in health checks and service status endpoints
-- **Structured Error Handling**: Comprehensive validation with detailed error responses
-- **Production Logging**: Structured logging with configurable output formats
-- **Input Validation**: Pydantic schemas ensuring data integrity
-- **Async Operations**: Full async/await implementation for optimal performance
+- **Structured Error Handling**: Validation with detailed error responses
+- **Dockerized Deployment**: Easily containerized with Docker
+<img width="1252" height="726" alt="image" src="https://github.com/user-attachments/assets/f38fdb2b-4b12-4da5-8667-6a3f66603406" />
+<img width="1262" height="875" alt="image" src="https://github.com/user-attachments/assets/24674d41-7f1d-4dfb-a9ac-846065ce15b9" />
+<img width="1252" height="875" alt="image" src="https://github.com/user-attachments/assets/322dbfa8-c8bb-4593-a6b5-5d5ac85b0373" />
 
-### Frontend (React Application)
-- **Interactive Calculators**
-- **Real-time Results**
-- **Request History Viewer**
-- **Statistics Dashboard**
-- **Cache Viewer**
-- **Responsive Design**
-- **Error Boundaries**
 
 ## Project Architecture
 
@@ -68,23 +61,6 @@ math-microservice/
 └── README.md
 ```
 
-## Technology Stack
-
-### Backend Technologies
-- **FastAPI**: Modern microframework with automatic API documentation
-- **Pydantic**: Data validation and serialization with type hints
-- **SQLAlchemy**: Async ORM for database operations
-- **SQLite**: Database persistence with migration support
-- **Uvicorn**: ASGI server for production deployment
-- **Structlog**: Structured logging for observability
-
-### Frontend Technologies
-- **React**: Component-based UI library
-- **Vite**: Fast build tool and development server
-- **Tailwind CSS**: Utility-first CSS framework
-- **Axios**: HTTP client for API communication
-- **React Router**: Client-side routing
-
 ## Prerequisites
 
 Before running this application, ensure you have:
@@ -118,7 +94,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 The backend will be available at: `http://localhost:8000`
 API documentation: `http://localhost:8000/docs`
 
-### 3. Frontend Setup
+### 3. Frontend Setup (optional)
 ```bash
 cd frontend
 
